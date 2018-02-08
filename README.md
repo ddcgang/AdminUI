@@ -1,0 +1,2 @@
+# SearchPrompt
+For search prompts
