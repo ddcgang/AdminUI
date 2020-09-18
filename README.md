@@ -1,2 +1,2 @@
-# SearchPrompt
-For search prompts
+# AdminUI
+For AdminUI
