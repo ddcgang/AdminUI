@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="/static/css/style.css" />
+		<script src="/static/js/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/vue/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/js/qs/qs.6.9.4.js"></script>
+	</head>
+	<body>
+		<div id="app">
+
+		</div>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data() {
+					return {
+						user: {
+							USER_NAME: 'admin',
+							PASS_WORD: '123456',
+							ENCRYPT: '123!@#$%^&*()_+123',
+							PUBLIC_KEY: 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8HMr2CBpoZPm3t9tCVlrKtTmI4jNJc7/HhxjIEiDjC8czP4PV+44LjXvLYcSV0fwi6nE4LH2c5PBPEnPfqp0g8TZeX+bYGvd70cXee9d8wHgBqi4k0J0X33c0ZnW7JruftPyvJo9OelYSofBXQTcwI+3uIl/YvrgQRv6A5mW01QIDAQAB'
+							
+						}
+					}
+				},
+				created() {
+					axios.post(`/static/json/userList.json?t=` + new Date(), Qs.stringify(this.user), {
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded'
+						}
+					}).then(res => {
+						console.log(res.data)
+					}).catch(error => {
+						console.log(error)
+					})
+				}
+			})
+		</script>
+
+	</body>
+</html>

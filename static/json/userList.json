@@ -1,0 +1,9 @@
+[{
+	"username": "admin",
+	"nick": "管理员",
+	"sex": 1
+}, {
+	"username": "user",
+	"nick": "用户",
+	"sex": 0
+}]
